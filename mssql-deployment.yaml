@@ -28,7 +28,7 @@ spec:
         - name: ACCEPT_EULA
           value: "Y"
         - name: SA_PASSWORD
-          value: "Luhan2020"
+          value: "Password2020"
         volumeMounts:
         - name: mssqldb
           mountPath: /var/opt/mssql
@@ -36,16 +36,3 @@ spec:
       - name: mssqldb
         persistentVolumeClaim:
           claimName: mssql-pvc
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name:  mssql-pvc
-  labels:
-    app: mssql
-spec:
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 5Gi
